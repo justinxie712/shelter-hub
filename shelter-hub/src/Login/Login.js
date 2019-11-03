@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './Login.css';
-import firebase { auth } from '../firebase.js';
+import firebase from '../firebase.js';
 
 
 class Login extends Component{
