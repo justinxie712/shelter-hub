@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from '../logo.svg';
 import './SideNav.css'
 import { FaHome, FaGlobeAmericas, FaBed } from 'react-icons/fa';
 import { Redirect, Link } from "react-router-dom";
@@ -33,7 +32,7 @@ const SideNav = (props) => {
         <div className='sideNav'>
             <div className='logo'>
                 <img 
-                    src={logo} 
+                    src={process.env.PUBLIC_URL + '/hopehub.jpg'} 
                     style={{
                         width: '100%', 
                         height: '10%', 

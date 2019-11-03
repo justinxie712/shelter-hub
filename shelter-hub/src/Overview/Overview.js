@@ -64,7 +64,7 @@ export class Overview extends Component {
                       marker={this.state.activeMarker}
                       visible={this.state.showInfoWindow}>
                         <div>
-                          <h1>{`${this.state.activeMarker.id} beds`}</h1>
+                          <h1>{`${this.props.yourBedCount} beds`}</h1>
                         </div>
                     </InfoWindow>
                   </Map>

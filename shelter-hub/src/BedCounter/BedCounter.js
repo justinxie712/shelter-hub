@@ -7,26 +7,18 @@ export class BedCounter extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // pull number from database
             value: 0,
-            // pull max from database (function =)
             max: 100
         };
     }
 
     handleChange = (e, value) => {
+        e.preventDefault();
+        this.props.setBedCount(value);
         this.setState({
             value: value
         });
     }
-
-    handleChangeCommitted = (e, value) => {
-        // Send updated number to the database
-    }
-
-    // handleClick = () => {
-    //     // Save it to data
-    // }
 
     render() {
         return (
@@ -35,13 +27,12 @@ export class BedCounter extends Component {
                 <div className='slider'>
                     <Slider 
                         onChange={(e, v) => this.handleChange(e, v)}
-                        onChangeCommitted={(e, v) => this.handleChangeCommitted(e, v)}
                         value={this.state.value} 
                         valueLabelDisplay={'on'} 
                         track={'inverted'} 
+                        defaultValue={0}
                         marks={true} 
-                        max={this.state.max} 
-                        defaultValue={0} 
+                        max={this.state.max}
                         aria-labelledby="continuous-slider" 
                     />
                 </div>

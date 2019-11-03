@@ -1,11 +1,9 @@
 
 import React, { Component } from 'react';
-//import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
-
-import { Button, Form, FormGroup, Label, Input,Container, Row, Col  } from 'reactstrap';
 import firebase from '../firebase.js';
-class ParlorForm extends React.Component {
+import './Registration.css';
+import { Link } from "react-router-dom";
+class ParlorForm extends Component {
   constructor(props) {
     super(props)
     this.state = this.initialState()
@@ -92,49 +90,74 @@ class ParlorForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className='registration'>
         <h1>Register your Organization</h1>
         <form onSubmit={this.handleSubmit}>
-        <input
-          name={"name"}
-          value={this.state.name}
-          placeholder={"Name"}
-          onChange={this.handleChange}
-        />
-          <input id="autocomplete"
-            className="input-field"
-            ref="input"
-            type="text"
-            name={"street_address"}
-            value={this.state.street_address}
+          <div>
+            <input
+              name={"name"}
+              value={this.state.name}
+              placeholder={"Name"}
+              onChange={this.handleChange}
+              size={50}
+            />
+          </div>
+          <br></br>
+          <div>
+            <input id="autocomplete"
+              className="input-field"
+              ref="input"
+              type="text"
+              name={"street_address"}
+              value={this.state.street_address}
               placeholder={"Street Address"}
               onChange={this.handleChange}
+              size={50}
             />
+          </div>
+          <br></br>
+          <div>
             <input
               name={"city"}
               value={this.state.city}
               placeholder={"City"}
               onChange={this.handleChange}
+              size={50}
             />
+          </div>
+          <br></br>
+          <div>
             <input
               name={"state"}
               value={this.state.state}
               placeholder={"State"}
               onChange={this.handleChange}
+              size={50}
             />
+          </div>
+          <br></br>
+          <div>
             <input
               name={"zip_code"}
               value={this.state.zip_code}
               placeholder={"Zipcode"}
               onChange={this.handleChange}
+              size={50}
             />
+          </div>
+          <br></br>
+          <div>
             <input
               name={"beds"}
               value={this.state.beds}
               placeholder={"Available beds"}
               onChange={this.handleChange}
+              size={50}
             />
-            <button onSubmit={this.handleSubmit}>Submit</button>
+          </div>
+          <br></br>
+          <p><Link to="/">Back to Login</Link></p>
+          <button onSubmit={this.handleSubmit}>Submit</button>
         </form>
       </div>
     )
@@ -142,4 +165,4 @@ class ParlorForm extends React.Component {
 
 }
 
-export default ParlorForm
+export default ParlorForm;
