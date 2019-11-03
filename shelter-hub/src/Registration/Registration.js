@@ -30,7 +30,7 @@ class ParlorForm extends React.Component {
           street_address:items[item].street_address,
           city: items[item].city,
           state: items[item].state,
-          zip_code:items[item].zipcode
+          zip_code:items[item].zip_code
         });
       }
       this.setState({
@@ -64,7 +64,7 @@ class ParlorForm extends React.Component {
    street_address: this.state.street_address,
    city: this.state.city,
    state: this.state.state,
-   zip_code: this.state.zipcode
+   zip_code: this.state.zip_code
 
  }
  itemsRef.push(item);
@@ -83,8 +83,6 @@ class ParlorForm extends React.Component {
     let address = addressObject.address_components
     debugger
     this.setState({
-      name: addressObject.name,
-      beds: addressObject.beds,
       street_address: `${address[0].long_name} ${address[1].long_name}`,
       city: address[2].long_name,
       state: address[4].short_name,
@@ -95,21 +93,20 @@ class ParlorForm extends React.Component {
   render() {
     return(
       <div>
-        <h1>Add New Parlor</h1>
+        <h1>Register your Organization</h1>
         <form onSubmit={this.handleSubmit}>
+        <input
+          name={"name"}
+          value={this.state.name}
+          placeholder={"Name"}
+          onChange={this.handleChange}
+        />
           <input id="autocomplete"
             className="input-field"
             ref="input"
-            type="text"/>
-            <input
-              name={"name"}
-              value={this.state.name}
-              placeholder={"Name"}
-              onChange={this.handleChange}
-            />
-            <input
-              name={"street_address"}
-              value={this.state.street_address}
+            type="text"
+            name={"street_address"}
+            value={this.state.street_address}
               placeholder={"Street Address"}
               onChange={this.handleChange}
             />
@@ -129,6 +126,12 @@ class ParlorForm extends React.Component {
               name={"zip_code"}
               value={this.state.zip_code}
               placeholder={"Zipcode"}
+              onChange={this.handleChange}
+            />
+            <input
+              name={"beds"}
+              value={this.state.beds}
+              placeholder={"Available beds"}
               onChange={this.handleChange}
             />
             <button onSubmit={this.handleSubmit}>Submit</button>
