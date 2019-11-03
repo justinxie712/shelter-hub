@@ -2,7 +2,7 @@
 // import '@mobiscroll/react/dist/css/min.css';
 
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input,Container, Row, Col  } from 'reactstrap';
+import { Button } from 'reactstrap';
 import './Login.css';
 import firebase, { auth, provider } from '../firebase.js';
 import { Link } from "react-router-dom";

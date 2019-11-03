@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import firebase from '../firebase.js';
 import './Registration.css';
-import { Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 class ParlorForm extends Component {
   constructor(props) {
     super(props)
@@ -11,6 +11,7 @@ class ParlorForm extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.autocomplete = null
+    this.isLoggedIn = false;
   }
 
   componentDidMount() {
@@ -74,6 +75,7 @@ class ParlorForm extends Component {
    state: '',
    zip_code: '',
  });
+ this.isLoggedIn = true;
 }
 
   handlePlaceSelect() {
@@ -159,6 +161,7 @@ class ParlorForm extends Component {
           <p><Link to="/">Back to Login</Link></p>
           <button onSubmit={this.handleSubmit}>Submit</button>
         </form>
+        {this.isLoggedIn && <Redirect to='/overview' />}
       </div>
     )
   }

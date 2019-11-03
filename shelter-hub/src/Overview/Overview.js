@@ -29,7 +29,6 @@ export class Overview extends Component {
     });
   }
 
-
   displayMarkers = (marker, index) => {
     return (
         <Marker
@@ -44,6 +43,8 @@ export class Overview extends Component {
   }
 
   render() {
+    // mocking purposes
+    let count = (this.state.activeMarker.position && (this.state.activeMarker.position.lat() === 47.49855629475769)) ? this.props.yourBedCount : Math.floor(Math.random() * 30);
     return (
       <div>
           <h1> Find Beds Near You </h1>
@@ -63,7 +64,7 @@ export class Overview extends Component {
                       marker={this.state.activeMarker}
                       visible={this.state.showInfoWindow}>
                         <div>
-                          <h1>{`${this.props.yourBedCount} beds`}</h1>
+                          <h2>{`${count} beds`}</h2>
                         </div>
                     </InfoWindow>
                   </Map>
