@@ -5,6 +5,7 @@ import Login from './Login/Login';
 import Overview from './Overview/Overview';
 import SideNav from './SideNav/SideNav';
 import Registration from './Registration/Registration';
+import Buttons from './Buttons/Buttons';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
@@ -18,6 +19,7 @@ function App() {
         {/*<Login />*/}
         {/* <Overview /> */}
         <Registration />
+        <Buttons />
       </div>
     </React.Fragment>
   );
