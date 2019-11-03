@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const Example = (props) => {
+const Registration = (props) => {
   return (
     <Form>
       <FormGroup>
@@ -48,4 +48,4 @@ const Example = (props) => {
   );
 }
 
-export default Example;
+export default Registration;

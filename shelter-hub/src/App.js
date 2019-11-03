@@ -5,6 +5,7 @@ import Login from './Login/Login';
 import Overview from './Overview/Overview';
 import SideNav from './SideNav/SideNav';
 import Registration from './Registration/Registration';
+import Buttons from './Buttons/Buttons';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); 
@@ -13,11 +14,12 @@ function App() {
     <React.Fragment>
       {isLoggedIn && <SideNav />}
       <div className="App">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <h1>ShelterHub</h1> */}
-        {/* <Login /> */}
-        <Overview />
-        {/* <Registration /> */}
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>ShelterHub</h1>
+        {/*<Login />*/}
+        {/* <Overview /> */}
+        <Registration />
+        <Buttons />
       </div>
     </React.Fragment>
   );
