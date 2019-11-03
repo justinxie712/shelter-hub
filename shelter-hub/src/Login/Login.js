@@ -9,10 +9,6 @@ import {
   Link
 } from "react-router-dom";
 
-
-
-
-
 class Login extends React.Component {
 
     login() {
@@ -37,7 +33,7 @@ class Login extends React.Component {
               <img src="./resources/main.jpg"></img>
            </Col>
          </Row>
-         <h3>Don't have an account? <Link to="/Registration/Registration"> Sign up </Link></h3>
+         <h3>Don't have an account? <Link to="/registration">Sign up</Link></h3>
        </Container>
      )
 

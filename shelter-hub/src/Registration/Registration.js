@@ -29,8 +29,11 @@ const Example = (props) => {
       </FormGroup>
       <FormGroup>
         <Label for="operatingHours">Hours of Operation</Label>
-        <br/>From: <Input type="time" name="startTime" id="startTime" />
-        To: <Input type="time" name="startTime" id="startTime" />
+        <br/>
+        <Label for="to">To:</Label>
+        <Input type="text" name="to" id="to" placeholder="" />
+        <Label for="from">From:</Label>
+        <Input type="text" name="from" id="from" placeholder="" />
         <Label for="operatingDays">Which days are you open?</Label>
         <Input type="select" name="selectDays" id="selectDays" multiple>
           <option>Mon</option>
