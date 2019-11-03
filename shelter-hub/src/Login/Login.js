@@ -1,53 +1,44 @@
+// import mobiscroll from '@mobiscroll/react';
+// import '@mobiscroll/react/dist/css/min.css';
+
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input,Container, Row, Col  } from 'reactstrap';
 import './Login.css';
-import firebase from '../firebase.js';
+import firebase, { auth, provider } from '../firebase.js';
 
 
-class Login extends Component{
-  constructor() {
-    super();
-    this.state = {
-      email: '',
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const itemsRef = firebase.database().ref('items');
-    const item = {
-      user: this.state.email
-    }
-    itemsRef.push(item);
-    this.setState({
-      email: ''
-    });
-  }
-  render(){
-    return (
-        <Form onSubmit ={this.handleSubmit}>
-            <FormGroup>
-                <Label for="exampleEmail">Email</Label>
 
-                <Input type="email" name="email" id="exampleEmail" placeholder="Username" onChange={this.handleChange} value={this.state.email} />
-            </FormGroup>
-            <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="Password" />
-            </FormGroup>
-            <Button>Submit</Button>
-            <br></br>
-            <a href="">Sign up</a>
-        </Form>
-    );
-  }
-}
+class Login extends React.Component {
+
+    login() {
+     auth.signInWithPopup(provider)
+       .then((result) => {
+         const user = result.user;
+         this.setState({
+           user
+         });
+       });
+   }
+   render() {
+     return (
+       <Container>
+         <Row>
+           <Col>
+             <h1> Sign in to Velocity </h1>
+             <p> Please enter your credentails to proceed </p>
+             <Button onClick={this.login}>Log In</Button>
+             <h3>Don't have an account? <a href =""> Sign up</a></h3>
+
+           </Col>
+           <Col>
+              <img src="/resources/main.jpg"></img>
+           </Col>
+         </Row>
+       </Container>
+     )
+
+   }
+ }
 
 export default Login;
