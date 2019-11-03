@@ -31,7 +31,8 @@ class Login extends React.Component {
              <h3>Don't have an account? <Link to="/registration">Sign up</Link></h3>
            </Col>
            <Col>
-               <img src={ require("../resources/main.jpg")}> </img>
+            <p>test</p>
+    
            </Col>
          </Row>
 

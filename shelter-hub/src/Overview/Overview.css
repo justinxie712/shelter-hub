@@ -1,0 +1,17 @@
+#mapArea {
+
+    width: auto;
+    height: 720px;
+}
+
+#mapView{
+    width:inherit;
+    height: 720px;
+}
+
+
+.markerPopup {
+  .changingTable, .unisexRestroom, .ADARestroom {
+    display: inline-block;
+  }
+}
