@@ -11,10 +11,10 @@ export class Overview extends Component {
                     google={this.props.google}
                     zoom={17}
                     style={{
-                        width: '50%',
-                        height: '50%',
+                        width: '90%',
+                        height: '100%',
                         position: 'relative',
-                        // float: 'right'
+                        float: 'right'
                     }}
                     initialCenter={{ lat: 47.444, lng: -122.176}}
                 >
