@@ -14,6 +14,8 @@ function Login(props) {
                 <Input type="password" name="password" id="examplePassword" placeholder="Password" />
             </FormGroup>
             <Button>Submit</Button>
+            <br></br>
+            <a href="">Sign up</a>
         </Form>
     );
 }
