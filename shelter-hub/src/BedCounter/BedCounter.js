@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './BedCounter.css';
 import { Slider } from '@material-ui/core';
-import { Button } from 'reactstrap';
 
 export class BedCounter extends Component {
     constructor(props) {

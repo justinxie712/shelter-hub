@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import './Overview.css';
 import { Container, Row, Col  } from 'reactstrap';
-import firebase from '../firebase.js';
 
 export class Overview extends Component {
   constructor(props) {
